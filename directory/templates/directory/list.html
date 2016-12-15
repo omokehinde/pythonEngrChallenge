@@ -25,11 +25,11 @@
   
 	
   <tbody>
-  	{% for info in directory_list %}
+  	{% for directory in directory_list %}
     <tr>
-      <th scope="row">{{info.id}}</th>
-      <td>{{info.name}}</td>
-      <td>{{info.email}}</td>
+      <th scope="row">{{directory.id}}</th>
+      <td>{{directory.name}}</td>
+      <td>{{directory.email}}</td>
       <td><a href="#"><span class="glyphicon glyphicon-edit"></span></a></td>
       <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
     </tr>

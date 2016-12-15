@@ -1,0 +1,49 @@
+{% extends 'directory/base.html' %}
+
+{% block title %} List {% endblock %}
+
+{% block content %} 
+ 
+<h3>List of Names and Emails</h3><br>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="font-cursive"><a href="{% url 'index' %}">HOME</a></li>
+         <li role="presentation" class="active font-cursive"><a href="{% url 'list' %}">LIST</a> </li>
+        <li role="presentation" class="font-cursive"><a href="{% url 'add' %}">ADD</a></li>
+      </ul><br><br><br>
+
+
+{% if directory_list %}
+<table class="table table-striped table-inverse">
+  <thead>
+    <tr>
+      <th>S/N</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  
+	
+  <tbody>
+  	{% for info in directory_list %}
+    <tr>
+      <th scope="row">{{info.id}}</th>
+      <td>{{info.name}}</td>
+      <td>{{info.email}}</td>
+      <td><a href="#"><span class="glyphicon glyphicon-edit"></span></a></td>
+      <td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+    </tr>
+    
+  </tbody>
+  {% endfor %}
+</table>
+	
+{% else %}
+	<h2>No List to display yet, <a href="">add one.</a></h2>
+{% endif %}
+
+{% endblock %}
+
+
+
+

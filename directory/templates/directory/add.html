@@ -1,0 +1,31 @@
+{% extends 'directory/base.html' %}
+
+{% block title %} Add {% endblock %}
+
+{% block content %}
+<h3>Add new entries</h3><br>
+<ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="font-cursive" ><a href="{% url 'index' %}">HOME</a></li>
+        <li role="presentation" class="font-cursive"><a href="{% url 'list' %}">LIST</a> </li>
+        <li role="presentation" class="active font-cursive"><a href="{% url 'add' %}">ADD</a></li>
+      </ul>
+
+<div class="form-group"><br><br><br>
+	<div class="col-sm-offset-2 col-sm-10">
+	{% if error_message %}
+		<p><strong>{{error_message}}</strong></p>
+	{% endif %}
+	<form method="post">
+	{% csrf_token %} <!--  This tells django to prevent csrf attack  -->
+	{{ form.as_p }}
+	<div id="btnSize">
+	<!-- <input type="submit" value="save"> -->
+	<button type="submit" class="btn btn-sm btn-success">Save</button>
+	<button type="button" class="btn btn-sm btn-danger"><a href="{% url 'index' %}">Cancel</a></button>
+	</div>
+</div>
+	</form>
+	
+	
+</div>
+{% endblock %}

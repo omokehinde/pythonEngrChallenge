@@ -1,0 +1,23 @@
+{% extends 'directory/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %} 
+
+<h2>Welcome to the Homepage</h2> <br>
+
+	<ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active font-cursive"><a href="{% url 'index' %}">Home</a></li>
+        <li role="presentation" class="font-cursive"><a href="{% url 'list' %}">LIST</a> </li>
+        <li role="presentation" class="font-cursive"><a href="{% url 'add' %}">ADD</a></li>
+      </ul><br><br><br>
+<h3>How to use this app</h3><br>
+<h4>To Add an entry</h4>
+<p>click on the <a href="{% url 'add' %}">Add</a> button and then type in the name and email you want to add then click save </p><br>
+
+<h4>To View List entries</h4>
+<p>Click on the <a href="{% url 'list' %}">List</a> button</p>
+
+
+{% endblock %}
